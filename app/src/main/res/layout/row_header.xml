@@ -14,8 +14,9 @@
   limitations under the License.
   -->
 
-<resources>
-    <integer name="max_width_short_month_label_dp">240</integer>
-    <integer name="max_height_mini_view_dp">180</integer>
-    <integer name="max_height_mini_view_1_row_dp">120</integer>
-</resources>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/row_container"
+    android:layout_width="match_parent"
+    android:layout_height="32dp"
+    android:orientation="horizontal" />

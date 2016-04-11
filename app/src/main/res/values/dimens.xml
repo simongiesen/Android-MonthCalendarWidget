@@ -15,7 +15,9 @@
   -->
 
 <resources>
-    <string name="app_name">Month Calendar Widget</string>
-    <string name="previous_month">Previous month</string>
-    <string name="next_month">Next month</string>
+
+    <integer name="max_width_short_month_label_dp">240</integer>
+    <integer name="max_height_mini_view_dp">180</integer>
+    <integer name="max_height_mini_view_1_row_dp">120</integer>
+
 </resources>

@@ -14,8 +14,11 @@
   limitations under the License.
   -->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/row_container"
-    android:layout_width="match_parent"
-    android:layout_height="32dp"
-    android:orientation="horizontal" />
+<resources>
+
+    <color name="foreground_full">#fff</color>
+    <color name="foreground_semi">#4fff</color>
+    <color name="foreground_today">#111</color>
+    <color name="background_today">#fff</color>
+
+</resources>

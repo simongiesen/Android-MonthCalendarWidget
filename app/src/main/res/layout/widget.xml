@@ -14,7 +14,8 @@
   limitations under the License.
   -->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -27,16 +28,16 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/prev_month_button"
             style="?android:borderlessButtonStyle"
+            android:id="@+id/prev_month_button"
             android:layout_width="56dp"
             android:layout_height="match_parent"
             android:contentDescription="@string/previous_month"
             android:src="@drawable/ic_previous_month" />
 
         <Button
-            android:id="@+id/month_label"
             style="?android:borderlessButtonStyle"
+            android:id="@+id/month_label"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -46,8 +47,8 @@
             android:textSize="28sp" />
 
         <ImageButton
-            android:id="@+id/next_month_button"
             style="?android:borderlessButtonStyle"
+            android:id="@+id/next_month_button"
             android:layout_width="56dp"
             android:layout_height="match_parent"
             android:contentDescription="@string/next_month"

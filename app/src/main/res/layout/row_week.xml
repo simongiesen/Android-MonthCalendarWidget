@@ -14,13 +14,10 @@
   limitations under the License.
   -->
 
-<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
-    android:initialLayout="@layout/loading"
-    android:minHeight="180dp"
-    android:minResizeHeight="40dp"
-    android:minResizeWidth="180dp"
-    android:minWidth="180dp"
-    android:previewImage="@drawable/widget_preview"
-    android:resizeMode="vertical|horizontal"
-    android:updatePeriodMillis="1800000"
-    android:widgetCategory="keyguard|home_screen" />
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/row_container"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:orientation="horizontal" />

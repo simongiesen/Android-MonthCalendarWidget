@@ -14,7 +14,14 @@
   limitations under the License.
   -->
 
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/CalendarCell"
-    android:background="#1fff"
-    android:textColor="@color/foreground_full" />
+<appwidget-provider
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:initialLayout="@layout/loading"
+    android:minHeight="180dp"
+    android:minResizeHeight="40dp"
+    android:minResizeWidth="180dp"
+    android:minWidth="180dp"
+    android:previewImage="@drawable/widget_preview"
+    android:resizeMode="vertical|horizontal"
+    android:updatePeriodMillis="1800000"
+    android:widgetCategory="keyguard|home_screen" />

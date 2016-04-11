@@ -15,8 +15,9 @@
   -->
 
 <resources>
-    <color name="foreground_full">#fff</color>
-    <color name="foreground_semi">#4fff</color>
-    <color name="foreground_today">#111</color>
-    <color name="background_today">#fff</color>
+
+    <string name="app_name">Month Calendar Widget</string>
+    <string name="previous_month">Previous month</string>
+    <string name="next_month">Next month</string>
+
 </resources>

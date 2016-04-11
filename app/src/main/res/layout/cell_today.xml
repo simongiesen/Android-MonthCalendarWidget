@@ -14,9 +14,8 @@
   limitations under the License.
   -->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/row_container"
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_weight="1"
-    android:orientation="horizontal" />
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/CalendarCell"
+    android:background="@color/background_today"
+    android:textColor="@color/foreground_today" />
