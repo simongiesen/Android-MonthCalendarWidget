@@ -25,9 +25,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.provider.CalendarContract;
 import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.RemoteViews;
@@ -195,6 +197,16 @@ public class MonthCalendarWidget extends AppWidgetProvider {
 
                 RemoteViews cellViews = new RemoteViews(context.getPackageName(), cellLayoutResId);
                 cellViews.setTextViewText(android.R.id.text1, Integer.toString(calendar.get(Calendar.DAY_OF_MONTH)));
+
+                Uri.Builder builder = CalendarContract.CONTENT_URI.buildUpon()
+                        .appendPath("time")
+                        .appendPath(Long.toString(calendar.getTimeInMillis()));
+
+                Intent intent = new Intent(Intent.ACTION_VIEW, builder.build())
+                        .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                cellViews.setOnClickPendingIntent(android.R.id.text1,
+                        PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT));
 
                 if (isFirstOfMonth) {
                     cellViews.setTextViewText(R.id.month_label, DateFormat.format("MMM", calendar));
