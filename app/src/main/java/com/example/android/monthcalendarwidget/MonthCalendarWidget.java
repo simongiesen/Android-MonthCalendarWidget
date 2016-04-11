@@ -151,7 +151,10 @@ public class MonthCalendarWidget extends AppWidgetProvider {
             thisMonth = calendar.get(Calendar.MONTH);
         }
 
-        views.setTextViewText(R.id.month_label, DateFormat.format(shortMonthName ? "MMM yy" : "MMMM yyyy", calendar));
+        String mouthLabelFormat = calendar.get(Calendar.YEAR) == todayYear
+                ? shortMonthName ? "LLL" : "LLLL"
+                : shortMonthName ? "LLL yy" : "LLLL yyyy";
+        views.setTextViewText(R.id.month_label, DateFormat.format(mouthLabelFormat, calendar));
 
         if (!mini) {
             calendar.set(Calendar.DAY_OF_MONTH, 1);
