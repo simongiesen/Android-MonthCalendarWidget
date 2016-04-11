@@ -16,9 +16,16 @@
 
 <resources>
 
+    <color name="bg_cell_day">@android:color/transparent</color>
+    <color name="bg_cell_day_this_month">#1FFFFFFF</color>
+    <color name="bg_cell_today">@android:color/white</color>
+
+    <color name="hl_cell_day">#1FFFFFFF</color>
+    <color name="hl_cell_day_this_month">#42FFFFFF</color>
+    <color name="hl_cell_today">#1F000000</color>
+
     <color name="foreground_full">#fff</color>
     <color name="foreground_semi">#4fff</color>
     <color name="foreground_today">#111</color>
-    <color name="background_today">#fff</color>
 
 </resources>
