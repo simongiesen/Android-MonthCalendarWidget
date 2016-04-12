@@ -33,7 +33,8 @@
             android:layout_width="56dp"
             android:layout_height="match_parent"
             android:contentDescription="@string/previous_month"
-            android:src="@drawable/ic_previous_month" />
+            android:background="@drawable/bg_cell_day"
+            android:src="@drawable/ic_month_prev" />
 
         <Button
             style="?android:borderlessButtonStyle"
@@ -41,8 +42,9 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:fontFamily="sans-serif-condensed"
             android:gravity="center"
+            android:background="@drawable/bg_cell_day"
+            android:fontFamily="sans-serif-condensed"
             android:textColor="@color/foreground_full"
             android:textSize="28sp" />
 
@@ -52,7 +54,9 @@
             android:layout_width="56dp"
             android:layout_height="match_parent"
             android:contentDescription="@string/next_month"
-            android:src="@drawable/ic_next_month" />
+            android:background="@drawable/bg_cell_day"
+            android:src="@drawable/ic_month_next" />
+
     </LinearLayout>
 
     <LinearLayout
