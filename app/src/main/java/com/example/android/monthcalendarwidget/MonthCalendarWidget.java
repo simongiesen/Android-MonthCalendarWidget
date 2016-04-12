@@ -25,17 +25,20 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.provider.CalendarContract;
 import android.text.format.DateFormat;
+import android.text.format.DateUtils;
 import android.view.View;
 import android.widget.RemoteViews;
 
 import java.text.DateFormatSymbols;
 import java.util.Calendar;
+import java.util.concurrent.TimeUnit;
 
 public class MonthCalendarWidget extends AppWidgetProvider {
 
@@ -195,8 +198,25 @@ public class MonthCalendarWidget extends AppWidgetProvider {
                     cellLayoutResId = R.layout.cell_day_this_month;
                 }
 
+                calendar.set(Calendar.HOUR_OF_DAY, 0);
+                calendar.set(Calendar.MINUTE, 1);
+                calendar.set(Calendar.SECOND, 0);
+                calendar.set(Calendar.MILLISECOND, 0);
+
+                long begin = calendar.getTimeInMillis();
+                long end = begin + DateUtils.DAY_IN_MILLIS - TimeUnit.HOURS.toMillis(1);
+                String[] projection = new String[] {
+                        CalendarContract.Instances._ID,
+                        CalendarContract.Instances.BEGIN,
+                        CalendarContract.Instances.END,
+                        CalendarContract.Instances.EVENT_ID
+                };
+
+                Cursor cursor = CalendarContract.Instances.query(context.getContentResolver(), projection, begin, end);
+                boolean hasEvent = cursor != null && cursor.getCount() > 0;
+
                 RemoteViews cellViews = new RemoteViews(context.getPackageName(), cellLayoutResId);
-                cellViews.setTextViewText(android.R.id.text1, Integer.toString(calendar.get(Calendar.DAY_OF_MONTH)));
+                cellViews.setTextViewText(android.R.id.text1, Integer.toString(calendar.get(Calendar.DAY_OF_MONTH)) + (hasEvent ? "." : ""));
 
                 Uri.Builder builder = CalendarContract.CONTENT_URI.buildUpon()
                         .appendPath("time")
